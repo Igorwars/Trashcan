@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="trashcan-1.0-SNAPSHOT:jar">
+    <output-path>$USER_HOME$/Desktop/Coding/TestServer/plugins</output-path>
+    <root id="archive" name="Trashcan.jar">
+      <element id="module-output" name="Trashcan" />
+    </root>
+  </artifact>
+</component>
