@@ -1,8 +1,9 @@
-package de.montown.trashcan;
+package de.maxderverpeilte.trashcan;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 
@@ -35,6 +36,24 @@ public class Listener implements org.bukkit.event.Listener {
         if(location.getBlock().getType().toString().equalsIgnoreCase(main.getConfigLoader().getConfig().getString("Config.Blocks.low"))){
             location.setY(location.getY()+1);
             if(location.getBlock().getType().toString().equalsIgnoreCase(main.getConfigLoader().getConfig().getString("Config.Blocks.top"))){
+                event.getInventory().clear();
+            }
+        }
+    }
+
+    //This one is new. Need to test it
+    @EventHandler
+    public void onPlayerMove(InventoryClickEvent event){
+        Location location = event.getView().getTopInventory().getLocation();
+        if(location == null){
+            return;
+        }
+        if(location.getBlock().getType().toString().equalsIgnoreCase(main.getConfigLoader().getConfig().getString("Config.Blocks.low"))){
+            location.setY(location.getY()+1);
+            if(location.getBlock().getType().toString().equalsIgnoreCase(main.getConfigLoader().getConfig().getString("Config.Blocks.top"))){
+                if(event.isShiftClick()){
+                    event.setCurrentItem(null);
+                }
                 event.getInventory().clear();
             }
         }

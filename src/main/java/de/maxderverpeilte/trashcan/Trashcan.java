@@ -1,6 +1,10 @@
-package de.montown.trashcan;
+package de.maxderverpeilte.trashcan;
 
 import org.bukkit.plugin.java.JavaPlugin;
+/*
+ * Copyleft MaxDerVerpeilte
+ * MaxDerVerpeilte = MaxWarsNicht, DarkFusion
+ */
 
 public final class Trashcan extends JavaPlugin {
 

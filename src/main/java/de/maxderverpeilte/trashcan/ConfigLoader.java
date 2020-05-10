@@ -1,4 +1,4 @@
-package de.montown.trashcan;
+package de.maxderverpeilte.trashcan;
 
 import com.google.common.base.Charsets;
 import org.bukkit.configuration.file.YamlConfiguration;
