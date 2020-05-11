@@ -2,6 +2,8 @@ package de.montown.trashcan;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+//Copyleft MaxDerVerpeilte
+
 public final class Trashcan extends JavaPlugin {
 
     private ConfigLoader configLoader;
