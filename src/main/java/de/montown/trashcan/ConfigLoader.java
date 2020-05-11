@@ -5,6 +5,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.*;
 import java.util.Objects;
 
+//Copyleft MaxDerVerpeilte
+
 public class ConfigLoader {
 
     private YamlConfiguration config;
