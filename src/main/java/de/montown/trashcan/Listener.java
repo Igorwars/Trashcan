@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 
+//Copyleft MaxDerVerpeilte
+
 public class Listener implements org.bukkit.event.Listener {
 
     private Trashcan main;
