@@ -10,7 +10,7 @@ public class ConfigLoader {
     private YamlConfiguration config;
     private Trashcan main;
     private File configFile;
-    private String version = "1.0.0";
+    private String version = "1.0.2";
 
     public ConfigLoader(Trashcan plugin) {
         main = plugin;
@@ -18,8 +18,7 @@ public class ConfigLoader {
         configFile = new File(main.getDataFolder(), "config.yml");
         if (!configFile.exists()) create();
         read();
-        if (!Objects.requireNonNull(config.getString("Config.ConfigVersion")).equalsIgnoreCase(version))
-            changeVersion();
+        if (!(config.getString("Config.ConfigVersion").equalsIgnoreCase(version))){ changeVersion(); read();}
     }
 
     /**

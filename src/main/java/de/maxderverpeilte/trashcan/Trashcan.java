@@ -12,8 +12,8 @@ public final class Trashcan extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Listener listener = new Listener(this);
         configLoader = new ConfigLoader(this);
+        Listener listener = new Listener(this);
     }
 
     public ConfigLoader getConfigLoader() {
