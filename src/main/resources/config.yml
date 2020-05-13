@@ -1,9 +1,18 @@
 Config:
   #Do not change the ConfigVersion. This will cause a reset of the config.yml
-  ConfigVersion: "1.0.0"
+  ConfigVersion: "1.0.2"
+
+  Messages:
+    MessagesEnabled: true
+    MessageCreate: "&aTrashcan successfully created."
+    MessageNoPermission: "&cYou do not have permission to create a trashcan"
 
   Blocks:
     #this one is the block to identify the trashcan
     top: "IRON_TRAPDOOR"
     #The block "low" has to be a block with an inventory e.g. Chest, Hopper, Dropper...
     low: "DROPPER"
+
+  #list the worlds where you don't want the Plug-in to work.
+  denied-worlds:
+  #  - world

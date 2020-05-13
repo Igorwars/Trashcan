@@ -1,6 +1,6 @@
 name: Trashcan
 version: ${project.version}
-main: de.montown.trashcan.Trashcan
+main: de.maxderverpeilte.trashcan.Trashcan
 api-version: 1.13
 prefix: Trashcan
 authors: [MaxDerVerpeilte]
