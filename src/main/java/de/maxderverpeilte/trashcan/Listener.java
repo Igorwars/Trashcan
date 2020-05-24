@@ -30,9 +30,6 @@ public class Listener implements org.bukkit.event.Listener {
     @EventHandler
     public void onChange(InventoryMoveItemEvent event) {
         Location location = event.getDestination().getLocation();
-        if (deniedworlds.contains(location.getWorld().getName())) {
-            return;
-        }
         if (location.getBlock().getType().toString().equalsIgnoreCase(config.getString("Config.Blocks.low"))) {
             if (location.getBlock().getState() instanceof Container) {
                 Container container = (Container) location.getBlock().getState();
@@ -52,10 +49,6 @@ public class Listener implements org.bukkit.event.Listener {
         if (location == null) {
             return;
         }
-        if (deniedworlds.contains(location.getWorld().getName())) {
-            return;
-        }
-
         if (location.getBlock().getType().toString().equalsIgnoreCase(config.getString("Config.Blocks.low"))) {
             if (location.getBlock().getState() instanceof Container) {
                 Container container = (Container) location.getBlock().getState();
@@ -73,6 +66,13 @@ public class Listener implements org.bukkit.event.Listener {
         if (event.getBlock().getType().toString().equalsIgnoreCase(config.getString("Config.Blocks.low"))) {
             Location location = event.getBlock().getLocation();
             location.setY(location.getY() + 1);
+            try {
+                if (deniedworlds.contains(location.getWorld().getName())) {
+                    return;
+                }
+            }catch (NullPointerException e){
+
+            }
             if (location.getBlock().getType().toString().equalsIgnoreCase(config.getString("Config.Blocks.top"))) {
                 if (!event.getPlayer().hasPermission("trashcan.create")) {
                     if (config.getBoolean("Config.Messages.MessagesEnabled")) {
