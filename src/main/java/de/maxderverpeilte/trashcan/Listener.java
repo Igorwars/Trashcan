@@ -30,6 +30,7 @@ public class Listener implements org.bukkit.event.Listener {
     @EventHandler
     public void onChange(InventoryMoveItemEvent event) {
         Location location = event.getDestination().getLocation();
+        if(location==null || location.getBlock().getType().toString() == null)return;
         if (deniedworlds.contains(location.getWorld().getName())) {
             return;
         }
@@ -49,9 +50,7 @@ public class Listener implements org.bukkit.event.Listener {
     @EventHandler
     public void onPlayerMove(InventoryCloseEvent event) {
         Location location = event.getInventory().getLocation();
-        if (location == null) {
-            return;
-        }
+        if (location == null || location.getBlock().getType().toString() == null) { return; }
         if (deniedworlds.contains(location.getWorld().getName())) {
             return;
         }

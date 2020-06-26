@@ -3,7 +3,6 @@ package de.maxderverpeilte.trashcan;
 import com.google.common.base.Charsets;
 import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.*;
-import java.util.Objects;
 
 public class ConfigLoader {
 
@@ -31,7 +30,7 @@ public class ConfigLoader {
             config = YamlConfiguration.loadConfiguration(custom);
 
             if (config.getKeys(false).isEmpty()) {
-                System.out.println("[Warnung] Max hat verkackt");
+                System.out.println("[Warn] an unexpected Error happened");
             }
 
 
