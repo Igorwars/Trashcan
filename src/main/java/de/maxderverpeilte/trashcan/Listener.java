@@ -13,6 +13,7 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Listener implements org.bukkit.event.Listener {
 
@@ -30,8 +31,10 @@ public class Listener implements org.bukkit.event.Listener {
     @EventHandler
     public void onChange(InventoryMoveItemEvent event) {
         Location location = event.getDestination().getLocation();
-        if(location==null || location.getBlock().getType().toString() == null)return;
-        if (deniedworlds.contains(location.getWorld().getName())) {
+        try {
+            if (location == null || location.getBlock().getType().toString() == null) return;
+        }catch(NullPointerException ignored){return;}
+        if (deniedworlds.contains(Objects.requireNonNull(location.getWorld()).getName())) {
             return;
         }
         if (location.getBlock().getType().toString().equalsIgnoreCase(config.getString("Config.Blocks.low"))) {
